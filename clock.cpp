@@ -47,3 +47,63 @@ string formatTime24(unsigned int h, unsigned int m, unsigned int s)
            twoDigitString(m) + ":" +
            twoDigitString(s);
 }
+
+// formats time to 12 hour format
+string formatTime12(unsigned int h, unsigned int m, unsigned int s)
+{
+
+    string minutes = twoDigitString(m);
+    string seconds = twoDigitString(s);
+
+    int hour12 = h % 12;
+
+    if (hour12 == 0)
+    {
+        hour12 = 12;
+    }
+
+    string hour = twoDigitString(hour12);
+
+    string period;
+
+    if (h < 12)
+    {
+        period = " A M";
+    }
+    else
+    {
+        period = " P M";
+    }
+
+    return hour + ":" + minutes + ":" + seconds + period;
+}
+
+// prints menu to output
+void printMenu(char *strings[], unsigned int numStrings, unsigned char width)
+{
+
+    cout << nCharString(width, '*') << endl;
+
+    for (unsigned int i = 0; i < numStrings; i++)
+    {
+
+        string item = strings[i];
+        string indexText = to_string(i + 1);
+
+        int currentLength = 2 + indexText.length() + 3 + item.length();
+        int spacesNeeded = width - currentLength - 1;
+
+        if (spacesNeeded < 0)
+            spacesNeeded = 0;
+
+        cout << "* " << indexText << " - " << item
+             << nCharString(spacesNeeded, ' ') << "*" << endl;
+
+        if (i != numStrings - 1)
+        {
+            cout << endl;
+        }
+    }
+
+    cout << nCharString(width, '*') << endl;
+}
