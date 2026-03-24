@@ -107,3 +107,26 @@ void printMenu(char *strings[], unsigned int numStrings, unsigned char width)
 
     cout << nCharString(width, '*') << endl;
 }
+
+// prompts user until a valid menu choice is made, outputs error message for invalid input.
+unsigned int getMenuChoice(unsigned int maxChoice)
+{
+    unsigned int choice = 0;
+
+    while (true)
+    {
+        if (choice < 1 || choice > maxChoice)
+        {
+            if (choice != 0)
+            {
+                cout << "Invalid choice, try again." << endl;
+            }
+
+            cin >> choice;
+        }
+        else
+        {
+            return choice;
+        }
+    }
+}
