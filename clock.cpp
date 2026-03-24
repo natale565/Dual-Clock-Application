@@ -31,3 +31,19 @@ string twoDigitString(int n)
         return to_string(n);
     }
 }
+
+// returns a string the length of n with the character c.
+string nCharString(size_t n, char c)
+{
+
+    return string(n, c);
+}
+
+// formats time to 24 hour format
+string formatTime24(unsigned int h, unsigned int m, unsigned int s)
+{
+
+    return twoDigitString(h) + ":" +
+           twoDigitString(m) + ":" +
+           twoDigitString(s);
+}
