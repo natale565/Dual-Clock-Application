@@ -17,3 +17,17 @@ void setTime(int h, int m, int s)
     minutes = m;
     seconds = s;
 }
+
+// adds zero to single digit number, if it is a two digit number, returns number.
+// example 2 -> 02, 25 -> 25
+string twoDigitString(int n)
+{
+    if (n < 10)
+    {
+        return "0" + to_string(n);
+    }
+    else
+    {
+        return to_string(n);
+    }
+}
