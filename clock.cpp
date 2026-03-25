@@ -130,3 +130,16 @@ unsigned int getMenuChoice(unsigned int maxChoice)
         }
     }
 }
+
+// displays 12 and 24 hour clock side by side.
+void displayClocks(unsigned int h, unsigned int m, unsigned int s)
+{
+
+    cout << nCharString(27, '*') << nCharString(3, ' ') << nCharString(27, '*') << endl;
+    cout << nCharString(1, '*') << nCharString(6, ' ') << "12-HOUR CLOCK" << nCharString(6, ' ') << nCharString(1, '*') << nCharString(3, ' ');
+    cout << nCharString(1, '*') << nCharString(6, ' ') << "24-HOUR CLOCK" << nCharString(6, ' ') << nCharString(1, '*') << endl;
+    cout << endl;
+    cout << nCharString(1, '*') << nCharString(6, ' ') << formatTime12(h, m, s) << nCharString(7, ' ') << nCharString(1, '*') << nCharString(3, ' ');
+    cout << nCharString(1, '*') << nCharString(8, ' ') << formatTime24(h, m, s) << nCharString(9, ' ') << nCharString(1, '*') << endl;
+    cout << nCharString(27, '*') << nCharString(3, ' ') << nCharString(27, '*') << endl;
+}
