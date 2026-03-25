@@ -169,3 +169,37 @@ void mainMenu()
         }
     }
 }
+
+void addOneHour()
+{
+    hours = (hours + 1) % 24;
+}
+
+// increments one minute. if minutes reach 59, resets to zero and increments hour.
+void addOneMinute()
+{
+    if (minutes == 59)
+    {
+        minutes = 0;
+        addOneHour();
+    }
+    else
+    {
+        minutes++;
+    }
+}
+
+// increments one second. if seconds reach 59, resets to zero and increments minute.
+void addOneSecond()
+{
+
+    if (seconds == 59)
+    {
+        seconds = 0;
+        addOneMinute();
+    }
+    else
+    {
+        seconds++;
+    }
+}
