@@ -143,3 +143,29 @@ void displayClocks(unsigned int h, unsigned int m, unsigned int s)
     cout << nCharString(1, '*') << nCharString(8, ' ') << formatTime24(h, m, s) << nCharString(9, ' ') << nCharString(1, '*') << endl;
     cout << nCharString(27, '*') << nCharString(3, ' ') << nCharString(27, '*') << endl;
 }
+
+// handles menu interaction with user until they exit.
+void mainMenu()
+{
+
+    unsigned int choice = 0;
+
+    while (choice != 4)
+    {
+
+        choice = getMenuChoice(4);
+
+        if (choice == 1)
+        {
+            addOneHour();
+        }
+        else if (choice == 2)
+        {
+            addOneMinute();
+        }
+        else if (choice == 3)
+        {
+            addOneSecond();
+        }
+    }
+}
